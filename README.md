@@ -9,8 +9,9 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
+scope determines accessibility and visibility. 
 - Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
-
+Closure defines that any function can look outward but never inward. It gives access from inner function to outer function scope.
 ## Introduction
 
 This challenge focuses on both scope and closures.
@@ -42,8 +43,9 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+scope determines accessibility and visibility. 
 2. Study the following code, then answer the questions below.
-
+Closure defines that any function can look outward but never inward. It gives access from inner function to outer function scope.
 ```js
 function personalDice(name){
   return function(){
