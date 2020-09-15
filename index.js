@@ -93,15 +93,15 @@ const finalScore = (callback, numberOfInnings) => {
 
 
 
-const getInningScore = (callback, i) => {
-  let inningScore = `${i}th inning: ${awayScore += callback()} - ${i}th inning: ${homeScore += callback()} `
+const getInningScore = (callback, inning) => {
+  let inningScore = `${inning}th inning: ${awayScore += callback()} - ${inning}th inning: ${homeScore += callback()} `
   return inningScore;
 }
 
 
 const scoreboard = (getInningScore, inning, numberOfInnings) => {
   for(let i = 1; i < numberOfInnings; i++ ){
-    console.log(getInningScore(inning, numberOfInnings ));
+    console.log(getInningScore(inning, i ));
   }
   return `FINAL SCORE:  ${awayScore} - ${homeScore}`
 }
