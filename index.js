@@ -60,11 +60,7 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-const inning = () => {
-  const randomNumber = Math.floor(Math.random() * 3)
-  return randomNumber;
 
-}
 
 /* Task 3: finalScore()
 
@@ -79,19 +75,39 @@ finalScore(inning, 9) might return:
 }
 
 */ 
+let homeScore = 0;
+let awayScore = 0;
 
-const finalScore = (callback, values) => {
-    let homeScore = 0;
-    let awayScore = 0;
-    for(let i=0; i <= values; i++) {
+const inning = () => { const randomNumber = Math.floor(Math.random() * 3)
+  return randomNumber;
+}
+
+const finalScore = (callback, numberOfInnings) => {
+    for(let i=0; i <= numberOfInnings; i++) {
       homeScore += callback()
       awayScore += callback()
     }
-    return {Home: homeScore, Away: awayScore}
-
+    return { 'Home': homeScore, 'Away': awayScore }
 
 }
-console.log(finalScore(inning, 9));
+
+
+
+const getInningScore = (callback, i) => {
+  let inningScore = `${i}th inning: ${awayScore += callback()} - ${i}th inning: ${homeScore += callback()} `
+  return inningScore;
+}
+
+
+const scoreboard = (getInningScore, inning, numberOfInnings) => {
+  for(let i = 1; i < numberOfInnings; i++ ){
+    console.log(getInningScore(inning, numberOfInnings ));
+  }
+  return `FINAL SCORE:  ${awayScore} - ${homeScore}`
+}
+
+console.log(scoreboard(getInningScore, inning, 10));
+
 
 /* Task 4: 
 
@@ -115,14 +131,6 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-const scoreboard = (getFinalScore, inning, numberOfInnings) => {
-   for(let i = 0; i <= numberOfInnings; i++ ) {
-    if(numberOfInnings[i]) {
-      return `${i}st: inning: ${awayTeam} - ${homeTeam}`
-    }
-  }
- 
-}
-console.log(scoreboard(finalScore(), inning(), 4 ))
+
 
 
